@@ -1,0 +1,677 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.page-container {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+/* ===== Top Bar ===== */
+.topbar {
+  padding: 10px 12px 8px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff;
+  text-align: center;
+}
+/* --- MOBILE VIEWPORT FIX --- */
+
+.brand {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+
+.btn {
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn.primary {
+  border-color: #888;
+  font-weight: 600;
+}
+
+.btn.danger {
+  border-color: #a00;
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 560px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.statusLine {
+  font-weight: 600;
+}
+
+.subStatusLine {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+
+/* ===== Board ===== */
+.board {
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.tile {
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.tile.green {
+  border-color: #2a7;
+  background: #2a7;
+  color: #fff;
+}
+
+.tile.yellow {
+  border-color: #ca0;
+  background: #ca0;
+  color: #111;
+}
+
+.tile.gray {
+  border-color: #777;
+  background: #777;
+  color: #fff;
+}
+
+/* Bright blue highlight for color-blind friendly win row */
+.row.winRow .tile {
+  outline: 4px solid #005bff;
+  outline-offset: 2px;
+}
+
+/* ===== Keyboard ===== */
+.keyboard {
+  margin-top: 4px;
+}
+
+.kbd {
+  display: grid;
+  gap: 8px;
+}
+
+.kbdRow {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.key {
+  height: 48px;
+  min-width: 34px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  background: #f2f2f2;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  user-select: none;
+}
+
+.key.wide {
+  min-width: 78px;
+}
+
+.key.gray {
+  background: #777;
+  border-color: #777;
+  color: #fff;
+}
+
+.key.yellow {
+  background: #ca0;
+  border-color: #ca0;
+  color: #111;
+}
+
+.key.green {
+  background: #2a7;
+  border-color: #2a7;
+  color: #fff;
+}
+
+/* ===== Daily Message ===== */
+.dailyMessage {
+  margin-top: 16px;
+  padding: 10px 18px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: #0b5cff;
+  border-radius: 999px;
+  border: 2px solid #0b5cff;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  line-height: 1.2;
+}
+.dailyMessage.win {
+  border: 3px solid #cc0000;
+  box-shadow: 0 0 10px rgba(204,0,0,0.6);
+}
+
+/* ===== Input ===== */
+.inputRow {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.guessInput {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.help {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ===== Modal ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,0.35);
+  padding: 16px;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modalCard {
+  width: min(560px, 100%);
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  padding: 14px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.statsBody {
+  white-space: pre-wrap;
+  margin: 10px 0 0;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e3e3e3;
+}
+
+/* ===== iPhone / Small Screen ===== */
+@media (max-width: 430px) {
+  .topbar {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .brand h1 {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+  }
+
+  .controls {
+    gap: 4px;
+  }
+
+  .btn {
+    padding: 5px 7px;
+    font-size: 11px;
+    border-radius: 7px;
+  }
+
+  .main {
+    padding: 8px;
+    gap: 8px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .statusLine {
+    font-size: 14px;
+  }
+
+  .subStatusLine {
+    font-size: 10px;
+  }
+
+  .board {
+    display: grid;
+    gap: 8px;
+  }
+
+  .row {
+    gap: 5px;
+  }
+
+  .tile {
+    height: 54px;
+    display: grid;
+    place-items: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 1px;
+    user-select: none;
+  }
+
+  .keyboard {
+    margin-top: 2px;
+  }
+
+  .kbd {
+    gap: 5px;
+  }
+
+  .kbdRow {
+    gap: 3px;
+  }
+
+  .key {
+    height: 38px;
+    min-width: 24px;
+    padding: 0 6px;
+    font-size: 11px;
+    border-radius: 7px;
+  }
+
+  .key.wide {
+    min-width: 54px;
+  }
+
+  
+  .help {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+}
+
+.title-bar{
+  display: table;
+  margin: 2px auto 4px auto;
+  padding: 3px 6px;
+  border-top: 1px solid #4b5563;
+  border-bottom: 1px solid #4b5563;
+  text-align: center;
+}
+
+.title-bar h1{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.tagline{
+  margin-top: 1px;
+  font-size: 10px;
+  line-height: 1.1;
+  color: #0a3d91;
+  text-align: center;
+  white-space: normal;
+}
+.topbar,
+.brand{
+  width:100%;
+  text-align:center;
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.title-bar{
+  display:inline-block;
+  margin:2px auto 4px auto;
+  padding:3px 8px;
+  border-top:1px solid #4b5563;
+  border-bottom:1px solid #4b5563;
+  text-align:center;
+}
+
+.title-bar h1{
+  margin:0;
+  text-align:center;
+}
+
+.subtitle{
+  text-align:center;
+}
+
+.test-footer {
+  flex: 0 0 auto;
+  margin-top: auto;
+
+  padding: 6px 10px 10px 10px;
+
+  text-align: center;
+  font-size: 13px;   /* bumped up */
+  line-height: 1.3;
+
+  white-space: nowrap;
+}
+
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.3;
+
+  white-space: normal;   /* allow wrapping */
+}
+
+body{
+  padding-bottom:20px;
+}
+#btnEnter {
+  display: none !important;
+}
+.page-container {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.topbar {
+  flex: 0 0 auto;
+}
+
+main,
+.game-area,
+.content,
+#game {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#board {
+  flex: 0 0 auto;
+}
+
+#keyboard {
+  flex: 0 0 auto;
+}
+
+.test-footer {
+  display: block !important;
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding: 2px 10px 6px 10px;
+  text-align: right;
+  font-size: 6px;
+  line-height: 1.15;
+}
+#board {
+  margin: 4px auto 2px auto;
+}
+
+.row {
+  gap: 3px;
+  margin-bottom: 3px;
+}
+
+.tile {
+  width: 42px;
+  height: 42px;
+  font-size: 20px;
+}
+
+.kbd {
+  margin-top: 4px;
+}
+
+.kbdRow {
+  gap: 3px;
+  margin-bottom: 3px;
+}
+
+.key {
+  height: 38px;
+  min-width: 26px;
+  padding: 0 5px;
+  font-size: 13px;
+}
+main,
+.game-area,
+.content,
+#game {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#keyboard {
+  margin-bottom: 4px;   /* pulls footer closer */
+}
+.test-footer {
+  display: block !important;
+
+  margin-top: 2px !important;      /* pulls it UP */
+  padding: 2px 10px 6px 10px !important;
+
+  text-align: center !important;
+  font-size: 11px !important;      /* slightly smaller */
+  line-height: 1.2 !important;
+
+  white-space: normal !important;  /* allow wrapping */
+  overflow: visible !important;    /* prevent cutoff */
+}
+
+.test-footer {
+  display: block !important;
+  position: relative !important;
+
+  margin-top: 8px !important;
+  padding: 4px 10px 8px 10px !important;
+
+  text-align: center !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+
+  white-space: normal !important;
+  overflow: visible !important;
+  clear: both !important;
+}
+
+.test-footer br {
+  display: none;
+}
+#keyboard {
+  margin-bottom: 8px !important;
+}
+
+#dailyMessage,
+#statusLine,
+#subStatusLine {
+  margin-bottom: 0 !important;
+}
+.test-footer {
+  display: block !important;
+  position: relative !important;
+  z-index: 5 !important;
+  background: #fff !important;
+
+  margin-top: 8px !important;
+  padding: 4px 10px 8px 10px !important;
+
+  text-align: center !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+
+  white-space: normal !important;
+  overflow: visible !important;
+  clear: both !important;
+  transform: none !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+.page-container {
+  padding-bottom: 10px !important;
+}
+
+#keyboard {
+  margin-bottom: 6px !important;
+}
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 8px;
+  flex-shrink: 0;       /* CRITICAL: prevents it from stretching */
+}
+
+.statusLine {
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.subStatusLine {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 6px;
+}
+.help {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.25;
+  margin: 4px 0 6px 0;
+}
+
+.help div {
+  margin: 0;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 8px 0;
+  flex-shrink: 0;
+}
+
+.statusLine {
+  margin: 0 0 2px 0;
+  text-align: center;
+}
+
+.subStatusLine {
+  margin: 0 0 6px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+}
+
+.dailyMessageWrap {
+  margin-top: 6px;
+}
+
+#board {
+  margin-top: 2px;
+}
+.dailyMessageWrap {
+  margin-top: 2px !important;
+  margin-bottom: 4px !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+
+#keyboard {
+  margin-bottom: 2px !important;
+}
+
+.main {
+  padding-bottom: 0 !important;
+}
