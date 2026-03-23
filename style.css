@@ -180,6 +180,11 @@ body {
   user-select: none;
 }
 
+button,
+.key {
+  touch-action: manipulation;
+}
+
 .key.wide {
   min-width: 78px;
 }
