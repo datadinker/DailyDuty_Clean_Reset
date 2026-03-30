@@ -607,10 +607,7 @@ main,
 #keyboard {
   margin-bottom: 4px;
 }
-.status {
-  position: relative;
-  bottom: 6px;
-}
+
 #dailyMessage,
 #statusLine,
 #subStatusLine {
