@@ -614,6 +614,9 @@ main,
   position: relative !important;
   bottom: 6px !important;
 }
-#status {
-  outline: 3px solid blue !important;
+.status-wrap,
+.statusBox,
+.pill,
+#pill {
+  outline: 3px solid green !important;
 }
