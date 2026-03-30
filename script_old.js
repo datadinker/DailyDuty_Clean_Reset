@@ -643,7 +643,7 @@ window.onerror = function (msg, url, line) {
        state.status = "won";
 
        const answer = state.targetWord || "";
-         renderAnswerInfo(answer, "MISSION COMPLETE - Word is:");
+         renderAnswerInfo(answer, "MISSION COMPLETE - Word is:", "win");
 
          dailyMessageEl.classList.add("win");
        if (guessInputEl) guessInputEl.disabled = true;

@@ -618,3 +618,12 @@ main,
 .main {
   padding-bottom: 0 !important;
 }
+.answer-info.win {
+  display: inline-block;
+  background: #dbeafe;
+  color: #0f172a;
+  border: 2px solid #005bff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 700;
+}
