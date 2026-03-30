@@ -611,3 +611,9 @@ main,
   position: relative;
   bottom: 6px;
 }
+#dailyMessage,
+#statusLine,
+#subStatusLine {
+  position: relative !important;
+  bottom: 6px !important;
+}
