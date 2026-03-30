@@ -614,9 +614,11 @@ main,
   position: relative !important;
   bottom: 6px !important;
 }
-.status-wrap,
-.statusBox,
-.pill,
-#pill {
-  outline: 3px solid green !important;
+#dailyMessage,
+#statusLine,
+#subStatusLine,
+.status,
+#keyboard {
+  border: 3px solid red !important;
+  background: yellow !important;
 }
