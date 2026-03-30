@@ -614,6 +614,6 @@ main,
   position: relative !important;
   bottom: 6px !important;
 }
-.status {
-  outline: 3px solid red !important;
+#status {
+  outline: 3px solid blue !important;
 }
