@@ -605,5 +605,8 @@ main,
 }
 
 #keyboard {
-  margin-bottom: 1px;
+  margin-bottom: 4px;
+}
+.status {
+  margin-top: 2px;
 }
