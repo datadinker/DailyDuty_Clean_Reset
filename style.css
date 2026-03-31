@@ -614,11 +614,3 @@ main,
   position: relative !important;
   bottom: 6px !important;
 }
-#dailyMessage,
-#statusLine,
-#subStatusLine,
-.status,
-#keyboard {
-  border: 3px solid red !important;
-  background: yellow !important;
-}
