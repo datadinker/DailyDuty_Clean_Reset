@@ -576,15 +576,11 @@ main,
   color: #555;
 }
 
-.dailyMessageWrap {
-  margin-top: 6px;
-}
-
 #board {
   margin-top: 2px;
 }
 .dailyMessageWrap {
-  margin-top: 2px !important;
+  margin-top: 0px !important;
   margin-bottom: 4px !important;
   padding: 0 !important;
   position: relative !important;
