@@ -604,13 +604,3 @@ main,
   font-weight: 700;
 }
 
-#keyboard {
-  margin-bottom: 4px;
-}
-
-#dailyMessage,
-#statusLine,
-#subStatusLine {
-  position: relative !important;
-  bottom: 6px !important;
-}
