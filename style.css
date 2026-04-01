@@ -145,12 +145,6 @@ body {
   color: #fff;
 }
 
-/* Bright blue highlight for color-blind friendly win row */
-.row.winRow .tile {
-  outline: 4px solid #005bff;
-  outline-offset: 2px;
-}
-
 /* ===== Keyboard ===== */
 .keyboard {
   margin-top: 4px;
@@ -567,6 +561,12 @@ main,
 .statusLine {
   margin: 0 0 2px 0;
   text-align: center;
+}
+
+/* Bright blue highlight for color-blind friendly win row */
+.row.winRow .tile {
+  outline: 4px solid #005bff;
+  outline-offset: 2px;
 }
 
 .subStatusLine {
