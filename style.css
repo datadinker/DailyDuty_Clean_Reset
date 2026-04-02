@@ -620,4 +620,7 @@ main,
   padding: 8px 12px;
   font-weight: 700;
 }
-
+body {
+  transform: scale(0.96);
+  transform-origin: top center;
+}
