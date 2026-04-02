@@ -523,9 +523,30 @@ main,
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2px;
+  flex-shrink: 0;
+}
 
-  margin-bottom: 8px;
-  flex-shrink: 0;       /* CRITICAL: prevents it from stretching */
+.statusLine {
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.subStatusLine {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 1.1;
+}
+
+#dailyMessage,
+#statusLine,
+#subStatusLine {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .statusLine {
